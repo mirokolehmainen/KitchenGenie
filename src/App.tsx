@@ -2,7 +2,7 @@ import React, { useState, createContext } from "react";
 import { Redirect, Route } from "react-router-dom";
 import { IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, setupIonicReact } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
-import Home from "./pages/Home";
+import Welcome from "./pages/Welcome";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -22,18 +22,16 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
-import Flowers from "./pages/recipes";
+
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import LoginOrSignup from "./pages/LoginOrSignUp";
-import Login from "./pages/Login";
 import Recipes from "./pages/recipes";
-import { homeOutline, heartOutline, personCircleOutline } from "ionicons/icons";
-import Tab2 from "./pages/Tab2";
-import Tab3 from "./pages/Tab3";
-import Search from "./pages/Search";
-import Recipe from "./components/recipeInfo";
+import Profile from "./pages/Profile";
+import Home from "./pages/Home";
+import Saved from "./pages/Saved";
+
 
 setupIonicReact();
 const firebaseConfig = {
@@ -67,26 +65,21 @@ const App: React.FC = () => {
       <IonApp>
         <IonReactRouter>
           <IonRouterOutlet>
-            <Route exact path="/home">
-              <Home />
+            <Route exact path="/welcome">
+              <Welcome/>
             </Route>
             <Route exact path="/">
-              <Redirect to="/home" />
+              <Redirect to="/welcome" />
             </Route>
-
             <Route exact path="/recipes">
               {isLoggedIn ? <Recipes /> : <LoginOrSignup />}
             </Route>
-
-            <Route exact path="/tab2">
-            <Tab2 />
-          </Route>
-          <Route path="/tab3">
-            <Tab3 />
-            </Route>
-            <Route path="/search">
-            
-            </Route>
+            <Route path="/Home" component={Home} exact={true} />
+            <Redirect to="/Home" />
+            <Route path="/saved" component={Saved} exact={true} />
+            <Redirect to="/saved" />
+            <Route path="/Profile" component={Profile} exact={true} />
+            <Redirect to="/Profile" />
     
           </IonRouterOutlet>
         </IonReactRouter>

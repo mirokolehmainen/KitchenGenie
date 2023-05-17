@@ -60,7 +60,7 @@ import {
           <div className="input-box container">
             <IonItem>
               <input
-                placeholder="email"
+                placeholder="Email"
                 type="email"
                 onChange={(e) => {
                   setEmail(e.target.value);
@@ -69,7 +69,7 @@ import {
             </IonItem>
             <IonItem>
               <input
-                placeholder="password"
+                placeholder="Password"
                 type="password"
                 onChange={(e) => {
                   setPassword(e.target.value);

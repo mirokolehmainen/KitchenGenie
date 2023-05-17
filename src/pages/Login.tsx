@@ -12,7 +12,7 @@ import {
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useContext, useState } from "react";
 import { UserContext } from "../App";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 type Props = {
   setLogin: (v: boolean) => void;
@@ -71,7 +71,7 @@ const Login: React.FC<Props> = ({ setLogin }: Props) => {
         <div className="input-box container">
           <IonItem>
             <input
-              placeholder="email"
+              placeholder="Email"
               type="email"
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -80,7 +80,7 @@ const Login: React.FC<Props> = ({ setLogin }: Props) => {
           </IonItem>
           <IonItem>
             <input
-              placeholder="password"
+              placeholder="Password"
               type="password"
               onChange={(e) => {
                 setPassword(e.target.value);

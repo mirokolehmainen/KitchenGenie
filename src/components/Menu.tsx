@@ -17,10 +17,11 @@ import {
             </IonToolbar>
           </IonHeader>
           <IonContent className="ion-padding">
-            <IonItem routerLink="/">Home</IonItem>
-            <IonItem routerLink="/recipes">Recipes</IonItem>
-            <IonItem routerLink="/tab2">Saved</IonItem>
-            <IonItem routerLink="/search">Search</IonItem>
+          <IonItem routerLink="/Home">Home</IonItem>
+            <IonItem routerLink="/Saved">Saved</IonItem>
+            <IonItem routerLink="/Profile">Profile</IonItem>
+          
+
          
           </IonContent>
         </IonMenu>
